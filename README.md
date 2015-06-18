@@ -17,7 +17,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-bower-version');
 ```
 
-## The "bower_version" task
+## Bower Version task
 
 ### Overview
 In your project's Gruntfile, add a section named `bower_version` to the data object passed into `grunt.initConfig()`.<br/>
