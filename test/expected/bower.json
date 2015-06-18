@@ -1,0 +1,6 @@
+{
+  "name"       : "test-bower",
+  "version"    : "1.2.3",
+  "description": "Test bower.json",
+  "private"    : true
+}
