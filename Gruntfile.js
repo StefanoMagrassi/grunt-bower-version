@@ -27,6 +27,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc'
       },
+      
       all: [
         'Gruntfile.js',
         'tasks/*.js',
@@ -38,7 +39,9 @@ module.exports = function(grunt) {
     clean: {
       tests: ['tmp'],
       
-      after_test: ['package.json']
+      after_test: {
+        src: ['_package.json']
+      }
     },
     
     // Prepare for test
@@ -46,28 +49,28 @@ module.exports = function(grunt) {
       prepare: {
         files: [{
           expand: true,
-          cwd: '',
-          src: 'package.json',
-          dest: '',
+          cwd   : '',
+          src   : 'package.json',
+          dest  : '',
           rename: function(dest, src) {
             return path.join(dest, '_' + src);
           }
         }, {
           src: ['test/data/bower.json'],
-          dest: 'tmp/bower.json',
+          dest: 'tmp/bower.json'
         }]
       },
       
       new_pkg: {
-        src: ['test/fixtures/package.json'],
-        dest: 'package.json',
+        src : ['test/fixtures/package.json'],
+        dest: 'package.json'
       },
       
       after: {
         expand: true,
-        cwd: '',
-        src: '_package.json',
-        dest: '',
+        cwd   : '',
+        src   : '_package.json', 
+        dest  : '',
         rename: function(dest, src) {
           src = src.substring(1);
           
@@ -78,7 +81,7 @@ module.exports = function(grunt) {
 
     // Test plugin.
     bower_version: {
-      update: ['bower.json']
+      update: ['tmp/bower.json']
     },
 
     // Unit tests.
@@ -89,7 +92,7 @@ module.exports = function(grunt) {
   });
 
   // Test
-  grunt.registerTask('test', ['clean', 'bower_version', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'copy:prepare', 'copy:new_pkg', 'bower_version', 'nodeunit', 'copy:after', 'clean:after_test']);
 
   // Default
   grunt.registerTask('default', ['jshint', 'test']);

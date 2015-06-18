@@ -20,49 +20,38 @@ grunt.loadNpmTasks('grunt-bower-version');
 ## The "bower_version" task
 
 ### Overview
-In your project's Gruntfile, add a section named `bower_version` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `bower_version` to the data object passed into `grunt.initConfig()`.<br/>
+Configure your task and set an array as value. If the array is empty it searches for a `bower.json` file in the process current working directory, otherwise it searches for the specified file.
 
 ```js
 grunt.initConfig({
   bower_version: {
-    options: {
-      // Task-specific options go here.
-    }
+    update: []
   }
 });
 ```
 
-### Options
-
-#### options.bowerFile
-Type: `String`
-Default value: `'bower.json'`
-
-Path to bower.json file.
-
 ### Usage Examples
 
-#### Default Options
+#### Default
 Searches for `bower.json` file in the same Gruntfile directory.
 
 ```js
 grunt.initConfig({
   bower_version: {
-    options: {}
+    update: []
   }
 });
 ```
 
-#### Custom Options
+#### Custom file path
 Specify a different `bower.json` file path.
 
 ```js
 grunt.initConfig({
   bower_version: {
-    options: {
-      bowerFile: 'test/bower.json'
-    }
-  },
+    update: ['tmp/bower.json']
+  }
 });
 ```
 

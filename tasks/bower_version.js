@@ -10,12 +10,7 @@
 
 module.exports = function(grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
-
   grunt.registerMultiTask('bower_version', 'Grunt plugin to sync bower.json version with package.json version', function() {
-    grunt.log.writeln(this.data.length);
-    
     var pkg       = grunt.file.readJSON('package.json'),
         bowerFile = this.data.length ? this.data[0] : 'bower.json',
         bowerJSON;
