@@ -1,7 +1,7 @@
 {
   "name": "grunt-bower-version",
   "description": "Grunt plugin to sync bower.json version with package.json version",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/StefanoMagrassi/grunt-bower-version",
   "author": {
     "name": "Stefano Magrassi",
