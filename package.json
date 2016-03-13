@@ -6,11 +6,11 @@
   "author": {
     "name": "Stefano Magrassi",
     "email": "stefano.magrassi@gmail.com",
-    "url": "http://stefanomagrassi.tumblr.com/"
+    "url": "http://thinkwritedone.com/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/StefanoMagrassi/grunt-bower-version"
+    "url": "git+https://github.com/StefanoMagrassi/grunt-bower-version.git"
   },
   "bugs": {
     "url": "https://github.com/StefanoMagrassi/grunt-bower-version/issues"
